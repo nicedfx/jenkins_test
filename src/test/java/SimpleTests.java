@@ -1,6 +1,9 @@
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.conditions.Text;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 
@@ -12,6 +15,8 @@ import static io.qameta.allure.Allure.step;
 public class SimpleTests extends TestBase{
 
     @Test
+    @DisplayName("A positive test")
+    @Tag("positive")
     void successTest() {
         step("Open google.com", () -> {
             open("https://google.com");
@@ -29,6 +34,8 @@ public class SimpleTests extends TestBase{
 
     }
     @Test
+    @DisplayName("A negative test")
+    @Tag("negative")
     void negativeTest() {
         step("Open google.com", () -> {
             open("https://google.com");

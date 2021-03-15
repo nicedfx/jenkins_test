@@ -35,14 +35,14 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-task AllureSteps(type: Test) {
+task positive(type: Test) {
     useJUnitPlatform {
-        includeTags 'AllureSteps'
+        includeTags 'positive'
     }
 }
-task AllurePO(type: Test) {
+task negative(type: Test) {
     useJUnitPlatform {
-        includeTags 'AllurePO'
+        includeTags 'negative'
     }
 }
 task ListenerOnly(type: Test) {
