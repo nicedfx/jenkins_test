@@ -19,6 +19,6 @@ public class TestBase {
         Configuration.browser = CHROME;
         Configuration.startMaximized = true;
 
-        Configuration.remote = "http://user1:alcatel_1@selenoid.sbacho.ml:4444/wd/hub";
+        Configuration.remote = "http://user1:Z^p&F@selenoid.sbacho.ml:4444/wd/hub";
     }
 }
