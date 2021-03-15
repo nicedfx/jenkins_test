@@ -1,18 +1,15 @@
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.conditions.Text;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-
 
 import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class SimpleTests extends TestBase{
+public class SimpleGoogleTests extends TestBase{
 
     @Test
     @DisplayName("A positive test")
