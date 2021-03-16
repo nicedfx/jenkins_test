@@ -5,7 +5,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import static com.codeborne.selenide.Browsers.CHROME;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static helpers.AttachmentsHelper.*;
 
@@ -19,8 +18,8 @@ public class TestBase {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        Configuration.browserVersion="89.0";
-        Configuration.browser = CHROME;
+//        Configuration.browserVersion="85.0";
+        Configuration.browser = System.getProperty("browser", "firefox");
         Configuration.startMaximized = true;
 
         Configuration.remote = "http://user1:Z^p&F@selenoid.sbacho.ml:4444/wd/hub";
