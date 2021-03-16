@@ -21,6 +21,8 @@ public class TestBase {
 //        Configuration.browserVersion="85.0";
         Configuration.browser = System.getProperty("browser", "firefox");
         Configuration.startMaximized = false;
+//        Configuration.remote = "http://user1:Z^p&F@selenoid.sbacho.ml:4444/wd/hub";
+        System.out.println("http" + System.getProperty("selenoid") + ":4444/wd/hub");
         Configuration.remote = "http" + System.getProperty("selenoid") + ":4444/wd/hub";
 
         // config for Java + Selenide
