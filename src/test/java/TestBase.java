@@ -51,5 +51,6 @@ public class TestBase {
         attachPageSource();
 //        attachAsText("Browser console logs", getConsoleLogs());
         getConsoleLogs();
+        attachVideo();
     }
 }
