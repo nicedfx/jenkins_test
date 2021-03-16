@@ -47,7 +47,7 @@ public class TestBase {
     public void afterEach() {
         attachScreenshot("Last screenshot");
         attachPageSource();
-        attachAsText("Browser console logs", getConsoleLogs());
+//        attachAsText("Browser console logs", getConsoleLogs());
 //        getConsoleLogs(); There is an issue with fireFox console logs!
         attachVideo();
         closeWebDriver();
