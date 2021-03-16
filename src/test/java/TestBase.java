@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Browsers.CHROME;
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static helpers.AttachmentsHelper.*;
 
 public class TestBase {
@@ -52,5 +53,6 @@ public class TestBase {
 //        attachAsText("Browser console logs", getConsoleLogs());
         getConsoleLogs();
         attachVideo();
+        closeWebDriver();
     }
 }
