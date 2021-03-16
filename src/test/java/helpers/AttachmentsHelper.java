@@ -29,10 +29,7 @@ public class AttachmentsHelper {
         return getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8);
     }
 
-    @Attachment(value = "Console logs", type = "text/plain")
-    public static String getConsoleLogs() {
-        return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
-    }
+
 
     @Attachment(value = "video", type = "text/html", fileExtension = ".html")
     public static String attachVideo() {
@@ -48,5 +45,9 @@ public class AttachmentsHelper {
 
     public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+    }
+//    @Attachment(value = "Console logs", type = "text/plain")
+    public static String getConsoleLogs() {
+        return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
     }
 }

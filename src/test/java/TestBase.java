@@ -20,10 +20,8 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
 //        Configuration.browserVersion="85.0";
         Configuration.browser = System.getProperty("browser", "firefox");
-        Configuration.startMaximized = true;
-
+        Configuration.startMaximized = false;
         Configuration.remote = "http://user1:Z^p&F@selenoid.sbacho.ml:4444/wd/hub";
-
 
         // config for Java + Selenide
 //        DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -49,8 +47,8 @@ public class TestBase {
     public void afterEach() {
         attachScreenshot("Last screenshot");
         attachPageSource();
-//        attachAsText("Browser console logs", getConsoleLogs());
-        getConsoleLogs();
+        attachAsText("Browser console logs", getConsoleLogs());
+//        getConsoleLogs(); There is an issue with fireFox console logs!
         attachVideo();
         closeWebDriver();
     }
