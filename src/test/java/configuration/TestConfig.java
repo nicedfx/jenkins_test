@@ -1,3 +1,5 @@
+package configuration;
+
 import org.aeonbits.owner.Config;
 
 @Config.Sources("classpath:${cfg}.properties")
@@ -19,10 +21,8 @@ public interface TestConfig extends Config {
     @DefaultValue("localhost")
     String selenoidUrl();
 
-
     @Key("startMaximized")
     @DefaultValue("false")
     boolean startMaximized();
-
 
 }

@@ -1,6 +1,9 @@
+package configuration;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import mainpackage.TestClassMain;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -10,12 +13,15 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static helpers.AttachmentsHelper.*;
 
 public class TestBase {
+    TestClassMain sda = new TestClassMain();
+
 
     @BeforeAll
     public static void setUp() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         TestConfig config = ConfigFactory.create(TestConfig.class, System.getProperties());
+        System.setProperty("selenoidUrl", config.selenoidUrl());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
@@ -26,7 +32,7 @@ public class TestBase {
         Configuration.startMaximized = config.startMaximized();
 
         if (config.isRemote() == true) {
-            Configuration.remote = config.selenoidUrl();
+            Configuration.remote = config.selenoidUrl() + ":4444/wd/hub/";
         }
     }
 

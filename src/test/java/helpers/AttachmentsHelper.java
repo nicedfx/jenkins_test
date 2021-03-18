@@ -1,10 +1,13 @@
 package helpers;
 
 import com.codeborne.selenide.Selenide;
+import configuration.TestConfig;
 import io.qameta.allure.Attachment;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import tests.SimpleGoogleTests;
 
 import java.nio.charset.StandardCharsets;
 
@@ -13,6 +16,9 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 
 
 public class AttachmentsHelper {
+    TestConfig config = ConfigFactory.create(TestConfig.class, System.getProperties());
+    String SelenoidUrl = config.selenoidUrl();
+    SimpleGoogleTests a;
 
     @Attachment(value = "{attachName}", type = "text/plain")
     public static String attachAsText(String attachName, String message) {
@@ -39,7 +45,7 @@ public class AttachmentsHelper {
     }
 
     public static String getVideoUrl() {
-        return "http" + System.getProperty("selenoid") + "/video/" + getSessionId() + ".mp4";
+        return "http" + System.getProperty("selenoidUrl") + "/video/" + getSessionId() + ".mp4";
     }
 
     public static String getSessionId() {
